@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDP Data Visualization for Ukraine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; 
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .main-heading {
+            color: #007bff; 
+            font-size: 2.5rem; 
+            text-align: center; 
+            margin-bottom: 10px; 
+        }
+        .horizontal-band {
+            width: 80%; 
+            height: 5px; 
+            background-color: #007bff; 
+            margin: 0 auto; 
+            margin-bottom: 30px; 
+        }
+        .chart-container {
+            margin-bottom: 40px;
+            text-align: center; 
+        }
+        img {
+            max-width: 100%; 
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">IOM (UN-Migration) Ukraine</h1>
+        <div class="horizontal-band"></div>
+        <h2 class="text-center">IDP Data Visualization by Oblast (Region)</h2>
+
+        {% for plot in plots %}
+            <div class="chart-container">
+                <img src="{{ plot }}" alt="IDP Data Chart" class="img-fluid">
+            </div>
+        {% endfor %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
